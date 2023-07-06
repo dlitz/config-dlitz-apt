@@ -1,0 +1,5 @@
+/debian/.debhelper/
+/debian/config-dlitz-apt.substvars
+/debian/config-dlitz-apt/
+/debian/debhelper-build-stamp
+/debian/files
