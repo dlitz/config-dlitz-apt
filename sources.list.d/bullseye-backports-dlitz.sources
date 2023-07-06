@@ -1,0 +1,5 @@
+Types: deb deb-src
+URIs: http://dlitz-aptly.s3-website.dualstack.us-west-2.amazonaws.com/
+Suites: bullseye-backports-dlitz
+Components: main
+Signed-By: /usr/share/keyrings/dlitz-aptly.gpg

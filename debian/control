@@ -1,18 +1,40 @@
 Source: config-dlitz-apt
-Section: unknown
+Section: misc
 Priority: optional
 Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
 Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 13),
 Standards-Version: 4.6.2
-Homepage: <insert the upstream URL, if relevant>
-#Vcs-Browser: https://salsa.debian.org/debian/config-dlitz-apt
-#Vcs-Git: https://salsa.debian.org/debian/config-dlitz-apt.git
+Vcs-Browser: https://github.com/dlitz/config-dlitz-apt
+Vcs-Git: https://github.com/dlitz/config-dlitz-apt.git
 
-Package: config-dlitz-apt
+Package: config-dlitz-apt-aptly
 Architecture: all
 Depends:
+ config-dlitz-keyrings,
  ${misc:Depends},
-Description: <insert up to 60 chars description>
- <Insert long description, indented with spaces.>
+Description: Apt sources for dlitz-aptly repo
+ This package will install
+ /etc/apt/sources.list.d/dlitz-aptly.sources
+ and any associated apt preferences file (if applicable).
+
+Package: config-dlitz-apt-bullseye-backports
+Architecture: all
+Depends:
+ config-dlitz-keyrings,
+ ${misc:Depends},
+Description: Apt sources for bullseye-backports-dlitz repo
+ This package will install
+ /etc/apt/sources.list.d/bullseye-backports-dlitz.sources
+ and any associated apt preferences file (if applicable).
+
+Package: config-dlitz-apt-bookworm-backports
+Architecture: all
+Depends:
+ config-dlitz-keyrings,
+ ${misc:Depends},
+Description: Apt sources for bookworm-backports-dlitz repo
+ This package will install
+ /etc/apt/sources.list.d/bookworm-backports-dlitz.sources
+ and any associated apt preferences file (if applicable).
