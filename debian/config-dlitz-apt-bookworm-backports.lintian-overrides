@@ -1,0 +1,2 @@
+package-installs-apt-preferences [etc/apt/preferences.d/bookworm-backports-dlitz]
+package-installs-apt-sources [etc/apt/sources.list.d/bookworm-backports-dlitz.sources]
