@@ -1,3 +1,9 @@
+config-dlitz-apt (0.0.2~~dev) UNRELEASED; urgency=medium
+
+  * wip
+
+ -- Darsey Litzenberger <dlitz@dlitz.net>  Wed, 05 Jul 2023 20:24:11 -0600
+
 config-dlitz-apt (0.0.1) default; urgency=medium
 
   * Initial release.
