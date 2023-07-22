@@ -1,8 +1,9 @@
-config-dlitz-apt (0.0.2~~dev) UNRELEASED; urgency=medium
+config-dlitz-apt (0.0.2) default; urgency=medium
 
-  * wip
+  * Add README.source file mentioning git-buildpackage
+  * Include keyring directly instead of depending on config-dlitz-keyrings
 
- -- Darsey Litzenberger <dlitz@dlitz.net>  Wed, 05 Jul 2023 20:24:11 -0600
+ -- Darsey Litzenberger <dlitz@dlitz.net>  Sat, 22 Jul 2023 16:05:26 -0600
 
 config-dlitz-apt (0.0.1) default; urgency=medium
 
