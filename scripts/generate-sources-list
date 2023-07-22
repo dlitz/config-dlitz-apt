@@ -1,0 +1,38 @@
+#!/bin/bash
+# dlitz 2023
+
+set -eu
+
+usage() {
+    printf 'Usage: %s example.sources.in keyring.gpg... > example.sources\n' "$0"
+}
+
+if [ "$*" = "--help" ]; then
+    usage
+    exit 0
+elif [ "$#" -lt 2 ] ; then
+    usage >&2
+    exit 2
+fi
+
+template_file="$1"
+shift 1
+cat "$@" | \
+    gpg --enarmor | \
+    sed -Ee 's/^-----(.*) PGP ARMORED FILE-----/-----\1 PGP PUBLIC KEY BLOCK-----/;/^Comment: /d;s/^(.)/\1/;s/^(\.*)$/.\1/;' | \
+    perl -e '
+    sub indent ($) {
+        my ($ind) = @_;
+        my @result;
+        while (<STDIN>) {
+            chomp();
+            push @result, "$ind$_";
+        }
+        join("\n", @result)
+    }
+
+    while(<>) {
+        s/^(\s+)\@\@KEYRING\@\@$/indent($1)/e;
+        print $_;
+    }
+    ' "$template_file"

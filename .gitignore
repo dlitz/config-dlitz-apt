@@ -8,3 +8,6 @@
 /debian/debhelper-build-stamp
 /debian/files
 /debian/tmp/
+/sources.list.d/bookworm-backports-dlitz.sources
+/sources.list.d/bullseye-backports-dlitz.sources
+/sources.list.d/dlitz-aptly.sources
