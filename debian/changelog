@@ -1,3 +1,14 @@
+config-dlitz-apt (0.0.3) dlitz-aptly; urgency=medium
+
+  * Add Architectures fields to sources.list.d/*.sources
+  * Makefile: Use 'install' instead of 'mkdir' and 'cp -rt'
+  * Fix for bullseye-backports-dlitz, which needs the public key to be in a
+    separate file, rather than being placed directly inside the .sources file.
+    Note that this still doesn't fix the config-dlitz-apt-aptly package for
+    bullseye.
+
+ -- Darsey Litzenberger <dlitz@dlitz.net>  Sun, 30 Jul 2023 16:55:42 -0600
+
 config-dlitz-apt (0.0.2) default; urgency=medium
 
   * Add README.source file mentioning git-buildpackage
