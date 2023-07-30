@@ -17,11 +17,8 @@ mrproper: clean
 	-rmdir --ignore-fail-on-non-empty --parents tmp
 
 install: all
-	umask 022
-	mkdir -p $(DESTDIR)/etc/apt/preferences.d
-	mkdir -p $(DESTDIR)/etc/apt/sources.list.d
-	cp -rt $(DESTDIR)/etc/apt/preferences.d preferences.d/*
-	cp -rt $(DESTDIR)/etc/apt/sources.list.d sources.list.d/*.sources
+	install -m0644 -D -t $(DESTDIR)/etc/apt/sources.list.d sources.list.d/*.sources
+	install -m0644 -D -t $(DESTDIR)/etc/apt/preferences.d preferences.d/*
 
 %.sources: %.sources.in keyrings/dlitz-aptly.gpg scripts/generate-sources-list
 	scripts/generate-sources-list $< keyrings/dlitz-aptly.gpg > $@
