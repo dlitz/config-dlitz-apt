@@ -1,3 +1,11 @@
+config-dlitz-apt (0.0.4) dlitz-aptly; urgency=medium
+
+  * Update .gitignore
+  * Revert "Add Architectures fields to sources.list.d/*.sources"
+  * Remove obsolete /etc/apt/preferences.d/*-backports-dlitz conffiles
+
+ -- Darsey Litzenberger <dlitz@dlitz.net>  Sun, 30 Jul 2023 17:58:30 -0600
+
 config-dlitz-apt (0.0.3) dlitz-aptly; urgency=medium
 
   * Add Architectures fields to sources.list.d/*.sources
