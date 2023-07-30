@@ -18,7 +18,6 @@ mrproper: clean
 
 install: all
 	install -m0644 -D -t $(DESTDIR)/etc/apt/sources.list.d sources.list.d/*.sources
-	install -m0644 -D -t $(DESTDIR)/etc/apt/preferences.d preferences.d/*
 	install -m0644 -D -T keyrings/dlitz-aptly.gpg $(DESTDIR)/etc/apt/keyrings/bullseye-backports-dlitz.gpg
 
 %.sources: %.sources.in keyrings/dlitz-aptly.gpg scripts/generate-sources-list

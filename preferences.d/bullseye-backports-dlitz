@@ -1,8 +1,0 @@
-# Treat my backports repo like backports.
-#
-# This is a workaround aptly's lack of support for setting
-# the NotAutomatic and ButAutomaticUpgrades fields in the repository
-# Release file. See https://github.com/aptly-dev/aptly/issues/1013
-Package: *
-Pin: release n=bullseye-backports-dlitz
-Pin-Priority: 100
