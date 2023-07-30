@@ -1,9 +1,8 @@
+/debian/*.debhelper
+/debian/*.substvars
 /debian/.debhelper/
-/debian/config-dlitz-apt-aptly.substvars
 /debian/config-dlitz-apt-aptly/
-/debian/config-dlitz-apt-bookworm-backports.substvars
 /debian/config-dlitz-apt-bookworm-backports/
-/debian/config-dlitz-apt-bullseye-backports.substvars
 /debian/config-dlitz-apt-bullseye-backports/
 /debian/debhelper-build-stamp
 /debian/files
