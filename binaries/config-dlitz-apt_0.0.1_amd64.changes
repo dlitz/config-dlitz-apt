@@ -1,0 +1,44 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon,  7 Aug 2023 05:43:22 MDT
+Source: config-dlitz-apt
+Binary: config-dlitz-apt-aptly config-dlitz-apt-bookworm-backports config-dlitz-apt-bullseye-backports
+Architecture: all
+Version: 0.0.1
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Description:
+ config-dlitz-apt-aptly - Apt sources for dlitz-aptly repo
+ config-dlitz-apt-bookworm-backports - Apt sources for bookworm-backports-dlitz repo
+ config-dlitz-apt-bullseye-backports - Apt sources for bullseye-backports-dlitz repo
+Checksums-Sha1:
+ 4e8696950700e4c912c2e7cd70b451a590a6ca80 2276 config-dlitz-apt-aptly_0.0.1_all.deb
+ db0f050f7353c6f231b099fb03ab0e97e4ddff1a 2520 config-dlitz-apt-bookworm-backports_0.0.1_all.deb
+ 4dfa7195cfd26b65067fff358ad3c168ab496cd9 2516 config-dlitz-apt-bullseye-backports_0.0.1_all.deb
+ c53cd7c51adeb8c4329e6b1b46b1ea00dae90546 5646 config-dlitz-apt_0.0.1_amd64.buildinfo
+Checksums-Sha256:
+ d529ae389d20e74a7865e1c1ac788c3f83fde347d0f90509e82e1d7f1dd8c232 2276 config-dlitz-apt-aptly_0.0.1_all.deb
+ 14feb716c9a00f7d0dc4bc392a35a12c6ae05e499a68e1f6ea7e4d9dba27545c 2520 config-dlitz-apt-bookworm-backports_0.0.1_all.deb
+ e466e8535d514674a0cd9cb02845cc47b98ae18b3af071e5a46f6a83b90f5bd5 2516 config-dlitz-apt-bullseye-backports_0.0.1_all.deb
+ 94989b241f85076b593ba4647e2457badd10215611090478254c59ca951a61ba 5646 config-dlitz-apt_0.0.1_amd64.buildinfo
+Changes:
+ config-dlitz-apt (0.0.1) default; urgency=medium
+ .
+   * Initial release.
+Files:
+ 80b667f06e8053203414ba2eb0b7c6c2 2276 misc optional config-dlitz-apt-aptly_0.0.1_all.deb
+ 2f64585d6599863afc42da63c95e44f1 2520 misc optional config-dlitz-apt-bookworm-backports_0.0.1_all.deb
+ 2bc4d54fe7c0dfa25c1b71b8c713d708 2516 misc optional config-dlitz-apt-bullseye-backports_0.0.1_all.deb
+ ffd8a6e3acd6bf883a56f6cb32979eb3 5646 misc optional config-dlitz-apt_0.0.1_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDZYxAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSk3PIBALadWH/N6pY/ZjBvnPpKrEB78bXr7fi4eJmt
+fRWOF400AQDdCQRdHPoO7vx3DxLuxv2/toY55kg9IWPdnTzAcztzDg==
+=2ID+
+-----END PGP SIGNATURE-----

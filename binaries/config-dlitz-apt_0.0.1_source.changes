@@ -1,0 +1,33 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Wed, 05 Jul 2023 20:19:01 -0600
+Source: config-dlitz-apt
+Architecture: source
+Version: 0.0.1
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Changes:
+ config-dlitz-apt (0.0.1) default; urgency=medium
+ .
+   * Initial release.
+Checksums-Sha1:
+ 81c75f6529f2588ec665308884005146bda24ca7 1191 config-dlitz-apt_0.0.1.dsc
+ 72b8d146da6ad1baa1fafb625a5970f8795b08f0 2224 config-dlitz-apt_0.0.1.tar.xz
+Checksums-Sha256:
+ 7af323f284bb56eef39e922d34e3922c0834e58e6c9038bccd795f8101123ce8 1191 config-dlitz-apt_0.0.1.dsc
+ 48de347a59470565fa1054310ef0ecdc598030ad9f31058a4c4a6e4c167f4606 2224 config-dlitz-apt_0.0.1.tar.xz
+Files:
+ 6ac7f57b94218139fba1553d1fce7fbe 1191 misc optional config-dlitz-apt_0.0.1.dsc
+ 5fd02a19bd18838f1bc04d8ab5714c9a 2224 misc optional config-dlitz-apt_0.0.1.tar.xz
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDZKRAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSkzTAA/0lsEOlvW9BWslL8dkQHQcz3/FBOkSqBp/6d
+i5wfEOZZAP9WKEXzrrh3OFIvZvOm81m6sNRXCMM9/4kHZSebLghiDQ==
+=cwNX
+-----END PGP SIGNATURE-----
