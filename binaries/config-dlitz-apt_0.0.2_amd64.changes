@@ -1,0 +1,45 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon,  7 Aug 2023 05:43:48 MDT
+Source: config-dlitz-apt
+Binary: config-dlitz-apt-aptly config-dlitz-apt-bookworm-backports config-dlitz-apt-bullseye-backports
+Architecture: all
+Version: 0.0.2
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Description:
+ config-dlitz-apt-aptly - Apt sources for dlitz-aptly repo
+ config-dlitz-apt-bookworm-backports - Apt sources for bookworm-backports-dlitz repo
+ config-dlitz-apt-bullseye-backports - Apt sources for bullseye-backports-dlitz repo
+Checksums-Sha1:
+ 8e7e3cc315d9d569787a251efb494915fb170979 2672 config-dlitz-apt-aptly_0.0.2_all.deb
+ 426b341873c409130b7ebc83c4a8491dc2e7f100 2940 config-dlitz-apt-bookworm-backports_0.0.2_all.deb
+ c4db6be8f6aa035dcc473b808cf1f7c5ab0e4279 2944 config-dlitz-apt-bullseye-backports_0.0.2_all.deb
+ 13fc9c5640c80468fe4dfb1d778e4b533e89f7a6 5680 config-dlitz-apt_0.0.2_amd64.buildinfo
+Checksums-Sha256:
+ 7f83db8836ff45b358690b4096b57a646c9d38741a444cd27b9d530e214baec6 2672 config-dlitz-apt-aptly_0.0.2_all.deb
+ e424968da083d31a915dd1ecd5df6f0278fc82e623b3faef60e8dd8fe484c9df 2940 config-dlitz-apt-bookworm-backports_0.0.2_all.deb
+ 3062f0e739e5fd4f7aeee12290a108baff1551e6f23ca2b33ac876d25707a5b8 2944 config-dlitz-apt-bullseye-backports_0.0.2_all.deb
+ ad491708b020885b9896aac0de6717cc41dcf97ebfb302440bb9a6a332f9455c 5680 config-dlitz-apt_0.0.2_amd64.buildinfo
+Changes:
+ config-dlitz-apt (0.0.2) default; urgency=medium
+ .
+   * Add README.source file mentioning git-buildpackage
+   * Include keyring directly instead of depending on config-dlitz-keyrings
+Files:
+ a5df79ae184e527a7c607b3cfabf0201 2672 misc optional config-dlitz-apt-aptly_0.0.2_all.deb
+ 1aed0e84343f0b0c80ff2d755b529881 2940 misc optional config-dlitz-apt-bookworm-backports_0.0.2_all.deb
+ aa02452d2ebfb54a0a9b591b0ed8f36f 2944 misc optional config-dlitz-apt-bullseye-backports_0.0.2_all.deb
+ 837b8c06204fe9f938e30fc5d523a2cd 5680 misc optional config-dlitz-apt_0.0.2_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDZaBAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSk49cBAP9q9JEGdDDwONGihE/UaYZYFAxCccWiCsoC
+U2tcel9WAQDykpHJoErp0zsCb2pNUbhDOm5XMhNFgo6ZX7dopbHjCw==
+=PlhQ
+-----END PGP SIGNATURE-----

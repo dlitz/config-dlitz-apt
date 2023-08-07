@@ -1,0 +1,34 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sat, 22 Jul 2023 16:05:26 -0600
+Source: config-dlitz-apt
+Architecture: source
+Version: 0.0.2
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Changes:
+ config-dlitz-apt (0.0.2) default; urgency=medium
+ .
+   * Add README.source file mentioning git-buildpackage
+   * Include keyring directly instead of depending on config-dlitz-keyrings
+Checksums-Sha1:
+ b3b3bb62b916917d44b398b78cb0df7eca36f217 1214 config-dlitz-apt_0.0.2.dsc
+ a1f92ae642c3ad7c9d41a8719f8a2c4ea622bb5f 3188 config-dlitz-apt_0.0.2.tar.xz
+Checksums-Sha256:
+ 250759e6658686eb524945b5e1746212a71911a656ce63a6554c1e7707889fba 1214 config-dlitz-apt_0.0.2.dsc
+ 1423015aa5a656bf71f7850df284a6a950615063e9bb1624fc8e41c5dd268432 3188 config-dlitz-apt_0.0.2.tar.xz
+Files:
+ d3728aed9b06a99150eadf0bba66b54b 1214 misc optional config-dlitz-apt_0.0.2.dsc
+ 6ec353d62c6882411bb6bc2ffaab97c0 3188 misc optional config-dlitz-apt_0.0.2.tar.xz
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDZZRAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSkD74A/RmCNKCTXnbnX8iZAHyWAe9D2gBY5OyJ3tKn
+A28vlU4sAPwNzU0i0fclHV1+qKACQ2I9ynwixZDzU56tHqpVQYzFCQ==
+=hnoK
+-----END PGP SIGNATURE-----
