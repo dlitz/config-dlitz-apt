@@ -1,0 +1,113 @@
+#!/usr/bin/expect --
+# Usage: %s debspawn_image_name /path/to/foo.deb...
+
+proc abort {} {
+    send_error "$::argv0: abort: closing channel\n"
+    catch {close}
+    send_error "$::argv0: abort: waiting for child to exit\n"
+    catch {wait} wait_result
+    send_error "$::argv0: abort: wait result: $wait_result\n"
+    exit 255
+}
+
+proc shellquote {s} {
+    return "'[regsub -all {'} $s {'\''}]'"
+}
+
+proc shellquote_args {args} {
+    return [join [lmap s $args {shellquote $s}] " "]
+}
+
+set sender_script_sh {
+    set -eu -o pipefail
+    tar --transform='s/^.*\///' -czf - "$@" | base64
+}
+set container_script_sh {
+    set -eu -o pipefail
+    unset HISTFILE
+    tempdir=$(mktemp -d)
+    base64 -d | tar -C "$tempdir" -xvvzf -
+    dpkg -i "$tempdir"/*.deb
+    rm -rf "$tempdir"
+}
+
+set debspawn_image_name [lindex $argv 0]
+set packages_to_install [lrange $argv 1 end]
+set exit_code 0
+set success 0
+
+spawn bash -c $sender_script_sh -- {*}$packages_to_install
+set sender_spawn_id $spawn_id
+
+spawn debspawn login --persistent $debspawn_image_name
+set container_spawn_id $spawn_id
+
+expect_after {
+    timeout { send_error "$::argv0: expect timed out\n"; abort }
+    eof { send_error "$::argv0: expect got unexpected eof\n"; abort }
+}
+
+set prompt_regex {root@.*/srv# }
+
+expect -re $prompt_regex { send "stty -echo\r" }
+expect -re $prompt_regex {
+    send "exec bash -c [shellquote $container_script_sh]\r"
+}
+
+log_user 0
+expect {
+    -i $sender_spawn_id
+    -re {([A-Za-z0-9+/=]+)} {
+        # Relay base64 from sender to container
+        send -i $container_spawn_id $expect_out(1,string)\n
+        exp_continue
+    }
+    eof {
+        send_user "\n"
+        send -i $container_spawn_id \n\004
+    }
+}
+log_user 1
+
+send_user "Waiting for sender to finish... "
+lassign [wait -i $sender_spawn_id] w_pid w_spawn_id w_os_error w_exit_status w_cls w_signal
+send_user "sender exited with status $w_exit_status\n"
+if {$exit_code == 0} {
+    if {$w_os_error != 0} {
+        set exit_code 71    # EX_OSERR
+    } elseif {$w_cls == "CHILDKILLED"} {
+        set exit_code 70    # EX_SOFTWARE
+    } elseif {$w_exit_status != 0} {
+        set exit_code $w_exit_status
+    }
+}
+
+#send_user "Waiting for container to exit\n"
+expect {
+    -i $container_spawn_id
+    -re {\r\nContainer .* exited successfully\.\r\n} {
+        set success 1
+    }
+    -re {\r\nContainer .* failed with error code ([0-9]+)\.\r\n} {
+        set exit_code $expect_out(1,string)
+    }
+}
+
+send_user "Waiting for debspawn to finish... "
+lassign [wait -i $container_spawn_id] w_pid w_spawn_id w_os_error w_exit_status w_cls w_sig
+send_user "debspawn exited with status $w_exit_status\n"
+
+if {$exit_code == 0} {
+    if {$w_os_error != 0} {
+        set exit_code 71    # EX_OSERR
+    } elseif {$w_cls == "CHILDKILLED"} {
+        set exit_code 70    # EX_SOFTWARE
+    } elseif {$w_exit_status != 0} {
+        set exit_code $w_exit_status
+    }
+}
+if {$success != 1} {
+    set exit_code 70    # EX_SOFTWARE
+}
+
+exit $exit_code

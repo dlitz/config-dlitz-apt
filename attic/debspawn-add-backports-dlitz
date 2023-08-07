@@ -1,0 +1,84 @@
+#!/usr/bin/expect --
+# Usage: %s debspawn_image_name package_to_install...
+
+proc abort {} {
+    send_error "$::argv0: abort: closing channel\n"
+    catch {close}
+    send_error "$::argv0: abort: waiting for child to exit\n"
+    catch {wait} wait_result
+    send_error "$::argv0: abort: wait result: $wait_result\n"
+    exit 255
+}
+
+proc posix_shell_quote {s} {
+    return "'[regsub -all {'} $s {'\''}]'"
+}
+
+set debspawn_image_name [lindex $argv 0]
+set packages_to_install [lrange $argv 1 end]
+
+set prompt_regex {root@.*/srv# }
+
+set shell_script_template {
+cat > /etc/apt/sources.list.d/tmp-apt-source.sources <<'EOF'
+Types: deb deb-src
+URIs: http://dlitz-aptly.s3-website.dualstack.us-west-2.amazonaws.com/
+Suites: default
+Components: misc
+Signed-By:
+ -----BEGIN PGP PUBLIC KEY BLOCK-----
+ .
+ mDMEYanySxYJKwYBBAHaRw8BAQdALlTQWUgYRgAX8FjbgbFwKeW4KznlAyxvDezy
+ DSA9Q3m0NGFwdGx5IHJlcG8gc2lnbmluZyBrZXkgPHJlcG8tc2lnbmVyQGFwdGx5
+ LmRsaXR6Lm5ldD6IlgQTFggAPgIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgBYh
+ BLK8tvc8CE2Ltu8DYHwqNQFofeaaBQJjjwGBBQkHiKm2AAoJEHwqNQFofeaal1YB
+ AOY3ROGtlcv3VeTJg4IKglXwZNpbOw6DCEoTx/zHlh0fAP93ymDOyMVt0diXYkYC
+ ooClZgv5PIKAl8ptlF3pKX5rAQ==
+ =f4T5
+ -----END PGP PUBLIC KEY BLOCK-----
+EOF
+apt-get -q -y update
+apt-get -q -y install config-dlitz-apt-aptly @@PACKAGES@@
+rm -f /etc/apt/sources.list.d/tmp-apt-source.sources
+apt-get -q clean
+apt-get -q -y update
+}
+
+set apt_package_args_str [join [lmap s $packages_to_install {posix_shell_quote $s}] " "]
+set shell_script [regsub -all {@@PACKAGES@@} $shell_script_template $apt_package_args_str]
+
+set shell_command "LC_ALL=C.UTF-8 exec /bin/bash -c [posix_shell_quote $shell_script]"
+
+expect_after {
+    timeout { send_error "$::argv0: expect timed out\n"; abort }
+    eof { send_error "$::argv0: expect got unexpected eof\n"; abort }
+}
+
+spawn debspawn login --persistent $debspawn_image_name
+#spawn debspawn login $debspawn_image_name
+
+expect {
+    -re $prompt_regex { send "$shell_command\n" }
+}
+
+expect {
+    -re {\r\nContainer .* exited successfully\.\r\n} {
+        set exit_code 0
+    }
+    -re {\r\nContainer .* failed with error code ([0-9]+)\.\r\n} {
+        set exit_code $expect_out(1,string)
+    }
+}
+
+lassign [wait] res_pid res_spawn_id res_os_error res_exit_status res_cls res_sig
+
+if {$exit_code == 0} {
+    if {$res_os_error != 0} {
+        set exit_code 71    # EX_OSERR
+    }
+    if {$res_cls == "CHILDKILLED"} {
+        set exit_code 70    # EX_SOFTWARE
+    }
+}
+
+exit $exit_code
