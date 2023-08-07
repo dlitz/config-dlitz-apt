@@ -17,22 +17,42 @@ fi
 
 template_file="$1"
 shift 1
-cat "$@" | \
-    gpg --enarmor | \
-    sed -Ee 's/^-----(.*) PGP ARMORED FILE-----/-----\1 PGP PUBLIC KEY BLOCK-----/;/^Comment: /d;s/^(.)/\1/;s/^(\.*)$/.\1/;' | \
-    perl -e '
-    sub indent ($) {
-        my ($ind) = @_;
-        my @result;
-        while (<STDIN>) {
-            chomp();
-            push @result, "$ind$_";
-        }
-        join("\n", @result)
-    }
 
-    while(<>) {
-        s/^(\s+)\@\@KEYRING\@\@$/indent($1)/e;
-        print $_;
+
+cleanup() {
+    local rc=$?
+    [ -z "${tf+1}" ] || { rm -f "$tf"; unset tf; } || rc=$?
+    [ -z "${tf2+1}" ] || { rm -f "$tf2"; unset tf2; } || rc=$?
+    return "$rc"
+}
+
+unset tf tf2
+trap cleanup INT TERM EXIT
+tf=$(mktemp)
+tf2=$(mktemp)
+
+cat "$@" | gpg --batch --enarmor > "$tf"
+sed -Ee '
+    s/^-----(.*) PGP ARMORED FILE-----/-----\1 PGP PUBLIC KEY BLOCK-----/;
+    /^Comment: /d;
+    s/^(.)/\1/;
+    s/^(\.*)$/.\1/;
+    #/^-----END PGP PUBLIC KEY BLOCK-----/Q0;    # Exit status 0
+    #$Q47;   # Error if we reach the end of the file without seeing a public key block
+' < "$tf" > "$tf2"
+perl -e '
+sub indent ($) {
+    my ($ind) = @_;
+    my @result;
+    while (<STDIN>) {
+        chomp();
+        push @result, "$ind$_";
     }
-    ' "$template_file"
+    join("\n", @result)
+}
+
+while(<>) {
+    s/^(\s+)\@\@KEYRING\@\@$/indent($1)/e;
+    print $_;
+}
+' "$template_file" < "$tf2"
