@@ -1,0 +1,35 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 30 Jul 2023 17:58:30 -0600
+Source: config-dlitz-apt
+Architecture: source
+Version: 0.0.4
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Changes:
+ config-dlitz-apt (0.0.4) dlitz-aptly; urgency=medium
+ .
+   * Update .gitignore
+   * Revert "Add Architectures fields to sources.list.d/*.sources"
+   * Remove obsolete /etc/apt/preferences.d/*-backports-dlitz conffiles
+Checksums-Sha1:
+ fe57adb25ad3d16d09343b2a7da9757570ef6ebd 1214 config-dlitz-apt_0.0.4.dsc
+ bb2fb32487770d3680bb911d235fa0990415580c 3296 config-dlitz-apt_0.0.4.tar.xz
+Checksums-Sha256:
+ 1a0cb300bd43a872de8c8c01347d47df659217fff279d044758fa208b74c9f3a 1214 config-dlitz-apt_0.0.4.dsc
+ 7aa21ae8c3bad524a059026b6d29e9aba50ccfe8b80e37daa1a93ee810279b8a 3296 config-dlitz-apt_0.0.4.tar.xz
+Files:
+ 0b461660d4edef0b9d75bd5e19ff206b 1214 misc optional config-dlitz-apt_0.0.4.dsc
+ d9a95d7f2e646b16adf148c60f9c5dbc 3296 misc optional config-dlitz-apt_0.0.4.tar.xz
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDZcBAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSkN0cBAK88X0Uk5BZXlS6ccD8yyqJal3sfcKLqc8v8
+5gYEplKvAQCWHFKBeulkGiZ1mWo5wcvU29zyxv+GohjF6MvZwMFMDQ==
+=LC4x
+-----END PGP SIGNATURE-----

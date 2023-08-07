@@ -1,0 +1,46 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon,  7 Aug 2023 05:44:41 MDT
+Source: config-dlitz-apt
+Binary: config-dlitz-apt-aptly config-dlitz-apt-bookworm-backports config-dlitz-apt-bullseye-backports
+Architecture: all
+Version: 0.0.4
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Description:
+ config-dlitz-apt-aptly - Apt sources for dlitz-aptly repo
+ config-dlitz-apt-bookworm-backports - Apt sources for bookworm-backports-dlitz repo
+ config-dlitz-apt-bullseye-backports - Apt sources for bullseye-backports-dlitz repo
+Checksums-Sha1:
+ f147589f384c16922657b1dd8deda4228cddc5e9 2968 config-dlitz-apt-aptly_0.0.4_all.deb
+ 284aa040fbac92905ee01ba22a56f88579a9d54e 3196 config-dlitz-apt-bookworm-backports_0.0.4_all.deb
+ faaf9e4c3f846f1e03308c50775d2bd52e07e84d 3136 config-dlitz-apt-bullseye-backports_0.0.4_all.deb
+ 21339a3667cd43aa55db96cde756f21c8ecadf8c 5680 config-dlitz-apt_0.0.4_amd64.buildinfo
+Checksums-Sha256:
+ 79834630741e4c38e39f43489264d3360341e3cbc3cd241f3b33f0c2e7962a21 2968 config-dlitz-apt-aptly_0.0.4_all.deb
+ ea57112e73eb372ed67ba358e5bf484107750c0806a85d7b3bbbc716b9c0e9b2 3196 config-dlitz-apt-bookworm-backports_0.0.4_all.deb
+ c6fc59196b5a803a05467ee9d8e02dd883ee77174957c61a63741a1093c89896 3136 config-dlitz-apt-bullseye-backports_0.0.4_all.deb
+ ad1b9757346c8258959a5d488153d7ed8a253b8faabb9e6809fedbaa9f0b79ca 5680 config-dlitz-apt_0.0.4_amd64.buildinfo
+Changes:
+ config-dlitz-apt (0.0.4) dlitz-aptly; urgency=medium
+ .
+   * Update .gitignore
+   * Revert "Add Architectures fields to sources.list.d/*.sources"
+   * Remove obsolete /etc/apt/preferences.d/*-backports-dlitz conffiles
+Files:
+ adb4b8b3e4ed02a19eaee4e29e52d12c 2968 misc optional config-dlitz-apt-aptly_0.0.4_all.deb
+ 0dee699e8a290b719ec4b5119a8bf39b 3196 misc optional config-dlitz-apt-bookworm-backports_0.0.4_all.deb
+ cde1d0f27e3dd4c180a2dd782288ca5a 3136 misc optional config-dlitz-apt-bullseye-backports_0.0.4_all.deb
+ 8943b43147e74576abb2c4b56e2ed01b 5680 misc optional config-dlitz-apt_0.0.4_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDZdBAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSkBEkA/2K3A4PYKiRU7m/Flp+NjUrGXjFqr5wa6qHe
+dMms8hygAQDBSz2fDWb7ZtZHCI0E1BHh2uBkMrs39RYTW6TbZRxXDQ==
+=4yMV
+-----END PGP SIGNATURE-----
