@@ -1,0 +1,49 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon,  7 Aug 2023 05:44:15 MDT
+Source: config-dlitz-apt
+Binary: config-dlitz-apt-aptly config-dlitz-apt-bookworm-backports config-dlitz-apt-bullseye-backports
+Architecture: all
+Version: 0.0.3
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Description:
+ config-dlitz-apt-aptly - Apt sources for dlitz-aptly repo
+ config-dlitz-apt-bookworm-backports - Apt sources for bookworm-backports-dlitz repo
+ config-dlitz-apt-bullseye-backports - Apt sources for bullseye-backports-dlitz repo
+Checksums-Sha1:
+ 635ef8c4bea66f840de7cb1a5010692ebf731824 2928 config-dlitz-apt-aptly_0.0.3_all.deb
+ 82d1e41406f706ad8bc40711be681561215a42db 3196 config-dlitz-apt-bookworm-backports_0.0.3_all.deb
+ f5fce83a7d203ffc20ac545ea348b09696f3490c 3136 config-dlitz-apt-bullseye-backports_0.0.3_all.deb
+ d317142e5dc681701485523e17de237ff5c5b203 5680 config-dlitz-apt_0.0.3_amd64.buildinfo
+Checksums-Sha256:
+ 93a716786a237995af07c84d2f224b776467b628104f9ad0f3d19762df14db6c 2928 config-dlitz-apt-aptly_0.0.3_all.deb
+ 286ae7bdb2725f913044516d94bb6c91474c89465f496f0458f1a4a3540ae24f 3196 config-dlitz-apt-bookworm-backports_0.0.3_all.deb
+ b188d1ce6acb8e2abf061a98d4d721bd96542e00faa298de97b4767ef9344a06 3136 config-dlitz-apt-bullseye-backports_0.0.3_all.deb
+ 4d1322a632bc7b3c91169e3538fc41dc739d675b09550abce55c539ccab5f03b 5680 config-dlitz-apt_0.0.3_amd64.buildinfo
+Changes:
+ config-dlitz-apt (0.0.3) dlitz-aptly; urgency=medium
+ .
+   * Add Architectures fields to sources.list.d/*.sources
+   * Makefile: Use 'install' instead of 'mkdir' and 'cp -rt'
+   * Fix for bullseye-backports-dlitz, which needs the public key to be in a
+     separate file, rather than being placed directly inside the .sources file.
+     Note that this still doesn't fix the config-dlitz-apt-aptly package for
+     bullseye.
+Files:
+ 33265770391c5ebf61ef3ccbc792faf3 2928 misc optional config-dlitz-apt-aptly_0.0.3_all.deb
+ 53f3221d060a3f7f9ca98a5cff160db5 3196 misc optional config-dlitz-apt-bookworm-backports_0.0.3_all.deb
+ 00a6de818ee5173c6dfefca9149e7244 3136 misc optional config-dlitz-apt-bullseye-backports_0.0.3_all.deb
+ 9af205e3bfca7295d75eb33c0e2c1c11 5680 misc optional config-dlitz-apt_0.0.3_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDZbhAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSkFz0BAIIMZ+AJHGISQmDPEaGKQbZhrNotsJQNkJXP
+6FHSd8LFAP9XG2ORIpoTeIN+70iyBtDwJuWYow8Psh/LApDZWWkEAw==
+=8p4r
+-----END PGP SIGNATURE-----
