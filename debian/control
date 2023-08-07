@@ -6,6 +6,7 @@ Rules-Requires-Root: no
 Build-Depends:
  debhelper-compat (= 13),
  config-dlitz-keyrings,
+ gnupg,
 Standards-Version: 4.6.2
 Vcs-Browser: https://github.com/dlitz/config-dlitz-apt
 Vcs-Git: https://github.com/dlitz/config-dlitz-apt.git
