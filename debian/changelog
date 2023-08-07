@@ -1,3 +1,11 @@
+config-dlitz-apt (0.0.5) dlitz-aptly; urgency=medium
+
+  * Add missing Build-Depends: gnupg
+  * Use 'set -o pipefail' so that the build fails if programs are missing
+  * Use tempfiles to avoid SIGPIPE during build
+
+ -- Darsey Litzenberger <dlitz@dlitz.net>  Mon, 07 Aug 2023 06:17:38 -0600
+
 config-dlitz-apt (0.0.4) dlitz-aptly; urgency=medium
 
   * Update .gitignore
