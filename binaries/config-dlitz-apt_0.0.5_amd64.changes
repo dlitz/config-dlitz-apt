@@ -1,0 +1,52 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Mon, 07 Aug 2023 06:17:38 -0600
+Source: config-dlitz-apt
+Binary: config-dlitz-apt-aptly config-dlitz-apt-bookworm-backports config-dlitz-apt-bullseye-backports
+Architecture: source all
+Version: 0.0.5
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Description:
+ config-dlitz-apt-aptly - Apt sources for dlitz-aptly repo
+ config-dlitz-apt-bookworm-backports - Apt sources for bookworm-backports-dlitz repo
+ config-dlitz-apt-bullseye-backports - Apt sources for bullseye-backports-dlitz repo
+Changes:
+ config-dlitz-apt (0.0.5) dlitz-aptly; urgency=medium
+ .
+   * Add missing Build-Depends: gnupg
+   * Use 'set -o pipefail' so that the build fails if programs are missing
+   * Use tempfiles to avoid SIGPIPE during build
+Checksums-Sha1:
+ 13b5f204a75363a817fa6f159c1ab5f6ae00b0a5 1221 config-dlitz-apt_0.0.5.dsc
+ 655e4edacb7a4e22778f2c37c9dc5e6609aac3aa 3548 config-dlitz-apt_0.0.5.tar.xz
+ 97abb0a760e2b644aad89df7fe24100e530f12e2 3068 config-dlitz-apt-aptly_0.0.5_all.deb
+ 9c3df388350ed98303b5935d01fe984369da83ec 3300 config-dlitz-apt-bookworm-backports_0.0.5_all.deb
+ cc799f470bb1e35647b0f37cc5c6b9ccf3e81cb9 3240 config-dlitz-apt-bullseye-backports_0.0.5_all.deb
+ 57375ee95f97dcef387dd955fce8584f45f65086 6841 config-dlitz-apt_0.0.5_amd64.buildinfo
+Checksums-Sha256:
+ 2a48c5ccf4bad216bcf107eec19f239fb1879f417bd17ba8b5cf448056df49c3 1221 config-dlitz-apt_0.0.5.dsc
+ 7bbbc5f106a4849ce96d62b9975d1e6beb7a1abdc1951d5d66db7bd028a9784a 3548 config-dlitz-apt_0.0.5.tar.xz
+ 49543e7e5c686d83dd771c40ccc096a53ba1cde443ee9538bfc7c36252b51fee 3068 config-dlitz-apt-aptly_0.0.5_all.deb
+ ff1266ff2e41c1cb76ca40b48374ee07701e14c8454e59dc17241857b808b6f1 3300 config-dlitz-apt-bookworm-backports_0.0.5_all.deb
+ 6f841bd3f2d237e5d9326e2fec061766ba78b76bc9da571b1ffc94dc2b367e55 3240 config-dlitz-apt-bullseye-backports_0.0.5_all.deb
+ f7db8b2b789b8e55fc5ef72890ed2131bc638b37c71c351db5b8c50b60b18528 6841 config-dlitz-apt_0.0.5_amd64.buildinfo
+Files:
+ f70e51c1cb1311adb15cd0f9ca7d88dd 1221 misc optional config-dlitz-apt_0.0.5.dsc
+ 2fee2de8c6ccf87cbf62751074db9984 3548 misc optional config-dlitz-apt_0.0.5.tar.xz
+ f3aa4767c6b2f0910530bed32de36f23 3068 misc optional config-dlitz-apt-aptly_0.0.5_all.deb
+ 6ad6705155bb9b1e0cacbeb3b523461d 3300 misc optional config-dlitz-apt-bookworm-backports_0.0.5_all.deb
+ 401e7364fedbb7a2496b2fc61c50913d 3240 misc optional config-dlitz-apt-bullseye-backports_0.0.5_all.deb
+ acc613791f29e2bd0a8c9e383a2186bb 6841 misc optional config-dlitz-apt_0.0.5_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCZNDiAxAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSkBMIBAPAXGIj+sUpGyjWgrQxCWhVIGkbyil2l0/oO
++bHg64cEAP9j6TlCUYU8eXOgcySvulA/cb/qRskujj8wZEeSgqEwBA==
+=gUGb
+-----END PGP SIGNATURE-----
