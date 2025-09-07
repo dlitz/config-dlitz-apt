@@ -1,5 +1,5 @@
 Source: config-dlitz-apt
-Section: misc
+Section: admin
 Priority: optional
 Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
 Rules-Requires-Root: no
