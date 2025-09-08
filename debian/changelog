@@ -1,3 +1,12 @@
+config-dlitz-apt (0.0.6) dlitz-aptly; urgency=medium
+
+  * Move config-dlitz-apt from Section: misc to Section: admin
+  * Update keyrings/dlitz-aptly.gpg to config-dlitz-keyrings=0.0.7
+  * Add trixie-backports-dlitz repo
+  * Remove references to installing apt preferences files for backports repos
+
+ -- Darsey Litzenberger <dlitz@dlitz.net>  Sun, 07 Sep 2025 20:53:46 -0600
+
 config-dlitz-apt (0.0.5) dlitz-aptly; urgency=medium
 
   * Add missing Build-Depends: gnupg
