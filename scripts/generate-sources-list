@@ -31,6 +31,12 @@ trap cleanup INT TERM EXIT
 tf=$(mktemp)
 tf2=$(mktemp)
 
+# Sanity check
+if cat "$@" | grep -q 'BEGIN PGP PUBLIC KEY BLOCK'; then
+    echo >&2 "error: keyrings $@ should be binary, not ASCII"
+    exit 1
+fi
+
 cat "$@" | gpg --batch --enarmor > "$tf"
 sed -Ee '
     s/^-----(.*) PGP ARMORED FILE-----/-----\1 PGP PUBLIC KEY BLOCK-----/;
