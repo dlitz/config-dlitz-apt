@@ -1,0 +1,84 @@
+ dpkg-buildpackage -us -uc -ui -i -I
+dpkg-buildpackage: info: source package config-dlitz-apt
+dpkg-buildpackage: info: source version 0.0.6
+dpkg-buildpackage: info: source distribution dlitz-aptly
+dpkg-buildpackage: info: source changed by Darsey Litzenberger <dlitz@dlitz.net>
+ dpkg-source -i -I --before-build .
+dpkg-buildpackage: info: host architecture amd64
+ debian/rules clean
+dh clean
+   dh_auto_clean
+	make -j8 clean
+make[1]: Entering directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+rm -f sources.list.d/bullseye-backports-dlitz.sources	 sources.list.d/bookworm-backports-dlitz.sources	 sources.list.d/trixie-backports-dlitz.sources	 sources.list.d/dlitz-aptly.sources
+make[1]: Leaving directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+   dh_clean
+ dpkg-source -i -I -b .
+dpkg-source: info: using source format '3.0 (native)'
+dpkg-source: info: building config-dlitz-apt in config-dlitz-apt_0.0.6.tar.xz
+dpkg-source: info: building config-dlitz-apt in config-dlitz-apt_0.0.6.dsc
+ debian/rules binary
+dh binary
+   dh_update_autotools_config
+   dh_autoreconf
+   dh_auto_configure
+   dh_auto_build
+	make -j8 "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+scripts/generate-sources-list sources.list.d/bullseye-backports-dlitz.sources.in keyrings/dlitz-aptly.gpg > sources.list.d/bullseye-backports-dlitz.sources
+scripts/generate-sources-list sources.list.d/bookworm-backports-dlitz.sources.in keyrings/dlitz-aptly.gpg > sources.list.d/bookworm-backports-dlitz.sources
+scripts/generate-sources-list sources.list.d/trixie-backports-dlitz.sources.in keyrings/dlitz-aptly.gpg > sources.list.d/trixie-backports-dlitz.sources
+scripts/generate-sources-list sources.list.d/dlitz-aptly.sources.in keyrings/dlitz-aptly.gpg > sources.list.d/dlitz-aptly.sources
+diff -q /usr/share/keyrings/dlitz-aptly.gpg keyrings/dlitz-aptly.gpg
+make[1]: Leaving directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+   dh_auto_test
+	make -j8 check
+make[1]: Entering directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+diff -q /usr/share/keyrings/dlitz-aptly.gpg keyrings/dlitz-aptly.gpg
+make[1]: Leaving directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+   create-stamp debian/debhelper-build-stamp
+   dh_prep
+   dh_auto_install
+	make -j8 install DESTDIR=/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt/debian/tmp AM_UPDATE_INFO_DIR=no "INSTALL=install --strip-program=true"
+make[1]: Entering directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+diff -q /usr/share/keyrings/dlitz-aptly.gpg keyrings/dlitz-aptly.gpg
+install -m0644 -D -t /home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt/debian/tmp/etc/apt/sources.list.d sources.list.d/*.sources
+install -m0644 -D -T keyrings/dlitz-aptly.gpg /home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt/debian/tmp/etc/apt/keyrings/bullseye-backports-dlitz.gpg
+make[1]: Leaving directory '/home/dwon/workspaces/my-debs/config-dlitz-apt/config-dlitz-apt'
+   dh_install
+   dh_installdocs
+   dh_installchangelogs
+   dh_lintian
+   dh_perl
+   dh_link
+   dh_strip_nondeterminism
+   dh_compress
+   dh_fixperms
+   dh_missing
+   dh_installdeb
+   dh_gencontrol
+   dh_md5sums
+   dh_builddeb
+dpkg-deb: building package 'config-dlitz-apt-bookworm-backports' in '../config-dlitz-apt-bookworm-backports_0.0.6_all.deb'.
+dpkg-deb: building package 'config-dlitz-apt-aptly' in '../config-dlitz-apt-aptly_0.0.6_all.deb'.
+dpkg-deb: building package 'config-dlitz-apt-trixie-backports' in '../config-dlitz-apt-trixie-backports_0.0.6_all.deb'.
+dpkg-deb: building package 'config-dlitz-apt-bullseye-backports' in '../config-dlitz-apt-bullseye-backports_0.0.6_all.deb'.
+ dpkg-genbuildinfo -O../config-dlitz-apt_0.0.6_amd64.buildinfo
+ dpkg-genchanges -O../config-dlitz-apt_0.0.6_amd64.changes
+dpkg-genchanges: info: including full source code in upload
+ dpkg-source -i -I --after-build .
+dpkg-buildpackage: info: full upload; Debian-native package (full source is included)
+Now running lintian config-dlitz-apt_0.0.6_amd64.changes ...
+E: config-dlitz-apt changes: bad-distribution-in-changes-file dlitz-aptly
+Finished running lintian.
+Now signing changes and any dsc files...
+ signfile dsc config-dlitz-apt_0.0.6.dsc Darsey Litzenberger <dlitz@dlitz.net>
+
+ fixup_buildinfo config-dlitz-apt_0.0.6.dsc config-dlitz-apt_0.0.6_amd64.buildinfo
+ signfile buildinfo config-dlitz-apt_0.0.6_amd64.buildinfo Darsey Litzenberger <dlitz@dlitz.net>
+
+ fixup_changes dsc config-dlitz-apt_0.0.6.dsc config-dlitz-apt_0.0.6_amd64.changes
+ fixup_changes buildinfo config-dlitz-apt_0.0.6_amd64.buildinfo config-dlitz-apt_0.0.6_amd64.changes
+ signfile changes config-dlitz-apt_0.0.6_amd64.changes Darsey Litzenberger <dlitz@dlitz.net>
+
+Successfully signed dsc, buildinfo, changes files
