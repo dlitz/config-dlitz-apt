@@ -1,7 +1,8 @@
 DESTDIR ?= tmp/output
 OUTPUTS =
-OUTPUTS += sources.list.d/bookworm-backports-dlitz.sources
-OUTPUTS += sources.list.d/bullseye-backports-dlitz.sources
+OUTPUTS += sources.list.d/bullseye-backports-dlitz.sources	# Debian 11
+OUTPUTS += sources.list.d/bookworm-backports-dlitz.sources	# Debian 12
+OUTPUTS += sources.list.d/trixie-backports-dlitz.sources	# Debian 13
 OUTPUTS += sources.list.d/dlitz-aptly.sources
 
 all: $(OUTPUTS) check

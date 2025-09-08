@@ -4,9 +4,11 @@
 /debian/config-dlitz-apt-aptly/
 /debian/config-dlitz-apt-bookworm-backports/
 /debian/config-dlitz-apt-bullseye-backports/
+/debian/config-dlitz-apt-trixie-backports/
 /debian/debhelper-build-stamp
 /debian/files
 /debian/tmp/
 /sources.list.d/bookworm-backports-dlitz.sources
 /sources.list.d/bullseye-backports-dlitz.sources
+/sources.list.d/trixie-backports-dlitz.sources
 /sources.list.d/dlitz-aptly.sources

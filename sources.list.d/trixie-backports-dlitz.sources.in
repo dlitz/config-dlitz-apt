@@ -1,0 +1,6 @@
+Types: deb deb-src
+URIs: http://dlitz-aptly.s3-website.dualstack.us-west-2.amazonaws.com/
+Suites: trixie-backports-dlitz
+Components: main
+Signed-By:
+ @@KEYRING@@

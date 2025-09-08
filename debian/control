@@ -42,3 +42,13 @@ Description: Apt sources for bookworm-backports-dlitz repo
  This package will install
  /etc/apt/sources.list.d/bookworm-backports-dlitz.sources
  and an associated apt preferences file.
+
+Package: config-dlitz-apt-trixie-backports
+Architecture: all
+Depends:
+ ${misc:Depends},
+Recommends:
+ config-dlitz-keyrings,
+Description: Apt sources for trixie-backports-dlitz repo
+ This package will install
+ /etc/apt/sources.list.d/trixie-backports-dlitz.sources
