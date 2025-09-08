@@ -30,7 +30,6 @@ Recommends:
 Description: Apt sources for bullseye-backports-dlitz repo
  This package will install
  /etc/apt/sources.list.d/bullseye-backports-dlitz.sources
- and an associated apt preferences file.
 
 Package: config-dlitz-apt-bookworm-backports
 Architecture: all
@@ -41,7 +40,6 @@ Recommends:
 Description: Apt sources for bookworm-backports-dlitz repo
  This package will install
  /etc/apt/sources.list.d/bookworm-backports-dlitz.sources
- and an associated apt preferences file.
 
 Package: config-dlitz-apt-trixie-backports
 Architecture: all

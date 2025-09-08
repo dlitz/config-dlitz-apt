@@ -1,2 +1,1 @@
-package-installs-apt-preferences [etc/apt/preferences.d/bullseye-backports-dlitz]
 package-installs-apt-sources [etc/apt/sources.list.d/bullseye-backports-dlitz.sources]
