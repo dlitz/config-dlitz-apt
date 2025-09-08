@@ -1,0 +1,55 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Sun, 07 Sep 2025 21:42:23 -0600
+Source: config-dlitz-apt
+Binary: config-dlitz-apt-aptly config-dlitz-apt-bookworm-backports config-dlitz-apt-bullseye-backports config-dlitz-apt-trixie-backports
+Architecture: source all
+Version: 0.0.7
+Distribution: dlitz-aptly
+Urgency: medium
+Maintainer: Darsey Litzenberger <dlitz@dlitz.net>
+Changed-By: Darsey Litzenberger <dlitz@dlitz.net>
+Description:
+ config-dlitz-apt-aptly - Apt sources for dlitz-aptly repo
+ config-dlitz-apt-bookworm-backports - Apt sources for bookworm-backports-dlitz repo
+ config-dlitz-apt-bullseye-backports - Apt sources for bullseye-backports-dlitz repo
+ config-dlitz-apt-trixie-backports - Apt sources for trixie-backports-dlitz repo
+Changes:
+ config-dlitz-apt (0.0.7) dlitz-aptly; urgency=medium
+ .
+   * Add sanity check for keyrings being binary
+   * Fix double ascii-armoring of keyring
+Checksums-Sha1:
+ 5689d3e28bedc457d77cc05b029827270488a01f 1322 config-dlitz-apt_0.0.7.dsc
+ bcc79d2032a05abb0b6b1854488bd168aef77e5c 4840 config-dlitz-apt_0.0.7.tar.xz
+ 1227c7eaa8b785ffa3387fd81b7c0523b22c819d 4376 config-dlitz-apt-aptly_0.0.7_all.deb
+ 8faa2dfacb79332521a94fc5682449af33b2ec09 4560 config-dlitz-apt-bookworm-backports_0.0.7_all.deb
+ ad819f9274b43fbe4690f21b4768b3f337cc1e22 4340 config-dlitz-apt-bullseye-backports_0.0.7_all.deb
+ 409fbbc7cf62e2fb2553edaaa63385a3a395ce44 4396 config-dlitz-apt-trixie-backports_0.0.7_all.deb
+ 02de5008eee0ceb65e99e89b8f4f7b23bf272d7e 13638 config-dlitz-apt_0.0.7_amd64.buildinfo
+Checksums-Sha256:
+ 441c3f1d71d41358fbfb91428d2c576719146832d25a0712c6bb26bd4a696027 1322 config-dlitz-apt_0.0.7.dsc
+ 93f359570ff31a9246b6537ec9f1a8fc70592091b5122fb60d4008c675723a07 4840 config-dlitz-apt_0.0.7.tar.xz
+ b69038ccced9d1585a1aea7064706dc87aeb237b3ad189498638c1b7d4168e0c 4376 config-dlitz-apt-aptly_0.0.7_all.deb
+ a6619b21e3a758b9d9261f671d644c3a1a149147c81a648259bb970c53a2cce0 4560 config-dlitz-apt-bookworm-backports_0.0.7_all.deb
+ 960e41a5bcff15930838e2d7228a0e85e039a9afc7fd3b2f3ee8db2700192a2d 4340 config-dlitz-apt-bullseye-backports_0.0.7_all.deb
+ bae8238e809d1c17e311767c7177931181a261e96ae6174435cc40466cc5b026 4396 config-dlitz-apt-trixie-backports_0.0.7_all.deb
+ 4e36c8cd95baa628c15908bad196736f5810d0db07b6d71a9b92ad5c5c592308 13638 config-dlitz-apt_0.0.7_amd64.buildinfo
+Files:
+ aef74a91638ac5d97020228e3dfd59ed 1322 admin optional config-dlitz-apt_0.0.7.dsc
+ f3bd38901610ed3b4dbe25bf18c20039 4840 admin optional config-dlitz-apt_0.0.7.tar.xz
+ 3beab5e8e62160fe4a4d3e7843e275a8 4376 admin optional config-dlitz-apt-aptly_0.0.7_all.deb
+ 2d9fedf3cba3ab9ae76ea8556cac08fa 4560 admin optional config-dlitz-apt-bookworm-backports_0.0.7_all.deb
+ 6cc01b19aec517ac2dd700bedd4e6a1c 4340 admin optional config-dlitz-apt-bullseye-backports_0.0.7_all.deb
+ 45897f9cddf9870611444ed51fbbf368 4396 admin optional config-dlitz-apt-trixie-backports_0.0.7_all.deb
+ e211fefe78436222a66f35f2a51a255e 13638 admin optional config-dlitz-apt_0.0.7_amd64.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iIYEARYKAC4WIQTWkd0xNWtIORg6n8DjQLK2WJpUpAUCaL5QuBAcZGxpdHpAZGxp
+dHoubmV0AAoJEONAsrZYmlSkTGoBAI7LQ/gu2tl9siGx6iqnKthjDbmYas4lfBSJ
+wAfWfcb1APwO1zWbHG0oSZMNH4hhv7u9hvaSdmkxqf+79GU/uCVvBw==
+=Q/5t
+-----END PGP SIGNATURE-----
