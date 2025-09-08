@@ -1,3 +1,10 @@
+config-dlitz-apt (0.0.7) dlitz-aptly; urgency=medium
+
+  * Add sanity check for keyrings being binary
+  * Fix double ascii-armoring of keyring
+
+ -- Darsey Litzenberger <dlitz@dlitz.net>  Sun, 07 Sep 2025 21:42:23 -0600
+
 config-dlitz-apt (0.0.6) dlitz-aptly; urgency=medium
 
   * Move config-dlitz-apt from Section: misc to Section: admin
